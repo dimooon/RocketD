@@ -39,9 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         mapFragment = (RocketMapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
-
         restoreTitle(savedInstanceState);
-        authenticate();
     }
 
     private void restoreTitle(Bundle savedInstanceState){
@@ -50,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 updateToolbarTitle(getString(R.string.signed_in_message));
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        authenticate();
     }
 
     private void authenticate(){

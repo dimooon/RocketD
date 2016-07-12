@@ -14,9 +14,7 @@ import java.util.HashMap;
  */
 public class Auth extends RocketEntity{
 
-    private static final String TAG = Auth.class.getSimpleName();
     private static final String CONTRACT_KEY = "KEY";
-    private HashMap<String,String> valueMap = new HashMap<>();
 
     @Override
     protected ContentHandler getResponsibleParser() {
@@ -28,8 +26,7 @@ public class Auth extends RocketEntity{
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-            this.tag = localName;
-
+            this.tag = TextUtils.isEmpty(localName) ? qName : localName;
         }
 
         @Override
@@ -47,13 +44,5 @@ public class Auth extends RocketEntity{
 
     public String getAuthKey(){
         return this.valueMap.get(CONTRACT_KEY);
-    }
-
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("Auth{");
-        sb.append("valueMap=").append(valueMap);
-        sb.append('}');
-        return sb.toString();
     }
 }

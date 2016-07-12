@@ -25,6 +25,7 @@ import dimooon.com.rocketd.session.data.Notam;
 public class RocketMapFragment extends MapFragment {
 
     public static final String ICAO_ID = "icaoId";
+
     private ArrayList<Notam> notams = new ArrayList<>();
     private GoogleMap map;
     private String icao;
@@ -75,6 +76,10 @@ public class RocketMapFragment extends MapFragment {
 
 
     public void populate(){
+
+        if(TextUtils.isEmpty(icao)) {
+            return;
+        }
 
         notams.clear();
         notams.addAll(Session.getNOTAMInformation(icao, getContext()));

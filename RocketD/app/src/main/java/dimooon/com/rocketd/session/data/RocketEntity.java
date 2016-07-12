@@ -28,6 +28,7 @@ public abstract class RocketEntity {
         SAXParser sp;
         try {
             sp = spf.newSAXParser();
+            spf.setNamespaceAware(true);
             XMLReader xr = sp.getXMLReader();
             xr.setContentHandler(getResponsibleParser());
 
@@ -79,6 +80,14 @@ public abstract class RocketEntity {
 
         @Override
         public void skippedEntity(String name) throws SAXException {}
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer(getClass().getSimpleName()+"{");
+        sb.append("valueMap=").append(valueMap);
+        sb.append('}');
+        return sb.toString();
     }
 
 }

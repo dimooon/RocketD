@@ -33,7 +33,7 @@ public class NOTAMInformation extends RocketEntity{
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-            this.tag = localName;
+            this.tag = TextUtils.isEmpty(localName) ? qName : localName;
 
             if(CONTRACT_NOTAM.equals(this.tag)){
                 notam = new Notam();
@@ -46,8 +46,9 @@ public class NOTAMInformation extends RocketEntity{
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
             super.endElement(uri, localName, qName);
+            String tag = TextUtils.isEmpty(localName) ? qName : localName;
 
-            if(CONTRACT_NOTAM.equals(localName)){
+            if(CONTRACT_NOTAM.equals(tag)){
                 notams.add(notam);
             }
         }
@@ -78,12 +79,9 @@ public class NOTAMInformation extends RocketEntity{
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("NOTAMInformation{");
-        sb.append("valueMap=").append(valueMap);
-        sb.append('[');
+        final StringBuffer sb = new StringBuffer();
+        sb.append(super.toString());
         sb.append(getNotamList());
-        sb.append(']');
-        sb.append('}');
         return sb.toString();
     }
 }

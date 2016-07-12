@@ -16,6 +16,8 @@ import java.io.InputStream;
 
 import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.data.Auth;
+import dimooon.com.rocketd.session.data.NOTAMInformation;
+import dimooon.com.rocketd.session.data.Notam;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
@@ -35,11 +37,46 @@ public class DataTest {
 
         Auth auth = new Auth();
         auth.parse(authResponse.getByteStream());
-        System.out.println(""+(DataTest.class.getSimpleName()+"auth:"+auth));
         assertNotNull(auth);
         assertTrue(auth.getAuthKey()!=null);
         assertFalse("".equals(auth.getAuthKey()));
+        assertTrue("239b50adfdc9ded6fc840e136dc4d5ea".equals(auth.getAuthKey()));
 
+    }
+
+    @Test
+    public void testNOTAMInformation(){
+
+        InputSource authResponse = new InputSource(RuntimeEnvironment.application.getResources().openRawResource(R.raw.notam_response));
+
+        NOTAMInformation notamInformation = new NOTAMInformation();
+        notamInformation.parse(authResponse.getByteStream());
+        assertNotNull(notamInformation);
+        assertTrue(notamInformation.getNotamList()!=null);
+        assertTrue(notamInformation.getNotamList().size() > 0);
+        assertTrue(notamInformation.getNotamList().size() == 3);
+
+    }
+
+    @Test
+    public void testNOTAM(){
+        InputSource authResponse = new InputSource(RuntimeEnvironment.application.getResources().openRawResource(R.raw.notam_response));
+
+        NOTAMInformation notamInformation = new NOTAMInformation();
+        notamInformation.parse(authResponse.getByteStream());
+        assertNotNull(notamInformation);
+        assertTrue(notamInformation.getNotamList()!=null);
+
+        Notam notam = notamInformation.getNotamList().get(0);
+        assertNotNull(notam);
+        assertTrue(("CHANGE TO RWY 07/25 DESIGNATORS TO RWY 06/24. AMEND ALL " +
+                "REFERENCES OF RWY 07 TO RWY 06 AND OF RWY 25 TO RWY 24. AIP " +
+                "AD 2.EGKA SECTIONS AD 2.9, 2.10, 2.12, 2.13, 2.20, 2.21 AND " +
+                "CHARTS AD 2-EGKA-2-1, 4-1,8-1, 8-2, 8-3, 8-4 AND 8-5 REFER.")
+                .equals(notam.getDescription()));
+
+        assertTrue(50.50 == notam.getLat());
+        assertTrue(-00.018 == notam.getLng());
     }
 
 }
