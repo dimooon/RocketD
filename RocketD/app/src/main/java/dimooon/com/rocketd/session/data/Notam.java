@@ -7,23 +7,19 @@ import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
-import java.util.HashMap;
-
 /**
- * Created by dimooon on 11.07.16.
+ * Created by dimooon on 12.07.16.
  */
-public class Auth extends RocketEntity{
+public class Notam extends RocketEntity {
 
-    private static final String TAG = Auth.class.getSimpleName();
-    private static final String CONTRACT_KEY = "KEY";
-    private HashMap<String,String> valueMap = new HashMap<>();
+    private static final String TAG = Notam.class.getSimpleName();
 
     @Override
     protected ContentHandler getResponsibleParser() {
-        return new AuthResponseParser();
+        return new NotamResponseParser();
     }
 
-    private class AuthResponseParser extends RocketResponseParser{
+    private class NotamResponseParser extends RocketResponseParser{
         private String tag;
 
         @Override
@@ -45,15 +41,35 @@ public class Auth extends RocketEntity{
         }
     }
 
-    public String getAuthKey(){
-        return this.valueMap.get(CONTRACT_KEY);
+    public double getLat(){
+        return Double.parseDouble(getLanLgn()[0])/1e2;
+    }
+
+    public double getLng(){
+        return -Double.parseDouble(getLanLgn()[1])/1e3;
+    }
+
+    public String getDescription(){
+        return this.valueMap.get("ItemE");
     }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Auth{");
+        final StringBuffer sb = new StringBuffer("Notam{");
         sb.append("valueMap=").append(valueMap);
         sb.append('}');
         return sb.toString();
     }
+
+    private String[] getLanLgn(){
+        String info = valueMap.get("ItemQ");
+
+        int lastSegment = info.lastIndexOf("/");
+
+        String geo = info.substring(lastSegment+1,info.length()-1);
+        String[] lanLgn = geo.split("N");
+
+        return lanLgn;
+    }
+
 }

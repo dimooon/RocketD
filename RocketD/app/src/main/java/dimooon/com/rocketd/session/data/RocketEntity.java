@@ -9,6 +9,7 @@ import org.xml.sax.XMLReader;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -20,6 +21,7 @@ import javax.xml.parsers.SAXParserFactory;
 public abstract class RocketEntity {
 
     protected abstract ContentHandler getResponsibleParser();
+    protected HashMap<String,String> valueMap = new HashMap<>();
 
     public void parse(InputStream is){
         SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -37,6 +39,10 @@ public abstract class RocketEntity {
         } catch (IOException e) {
             e.printStackTrace();
         };
+    }
+
+    public void put(String key,String value){
+        this.valueMap.put(key,value);
     }
 
     public class RocketResponseParser implements ContentHandler {

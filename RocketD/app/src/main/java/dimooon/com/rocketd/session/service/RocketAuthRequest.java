@@ -16,26 +16,25 @@ import java.util.List;
 /**
  * Created by dimooon on 11.07.16.
  */
-public class RocketAuthRequest {
+public class RocketAuthRequest implements RocketRequest{
+
+    private static final String BODY_KEY = "req";
+    private static final String AUTH_URL = "https://mobiledev.rocketroute.com/remote/auth";
 
     public InputStream request(String body){
-        return callSOAPServer(body);
-    }
-
-    private InputStream callSOAPServer(String body) {
 
         InputStream stream = null;
+        HttpPost httppost ;
+        List<NameValuePair> dataToPost = new ArrayList<NameValuePair>();
+        HttpClient httpclient;
+
         try {
-            HttpPost httppost = new HttpPost("https://mobiledev.rocketroute.com/remote/auth");
-            //StringEntity se = new StringEntity(builder.toString(), HTTP.UTF_8);
+            httppost = new HttpPost(AUTH_URL);
 
-            List<NameValuePair> dataToPost = new ArrayList<NameValuePair>();
-
-            dataToPost.add(new BasicNameValuePair("req", body));
-
+            dataToPost.add(new BasicNameValuePair(BODY_KEY, body));
             httppost.setEntity(new UrlEncodedFormEntity(dataToPost));
 
-            HttpClient httpclient = new DefaultHttpClient();
+            httpclient = new DefaultHttpClient();
 
             BasicHttpResponse httpResponse = (BasicHttpResponse) httpclient.execute(httppost);
             stream = httpResponse.getEntity().getContent();
@@ -44,4 +43,5 @@ public class RocketAuthRequest {
         }
         return stream;
     }
+
 }

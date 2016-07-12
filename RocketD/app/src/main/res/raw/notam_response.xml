@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<REQNOTAM>
+    <RESULT>0</RESULT>
+    <NOTAMSET ICAO="EGKA">
+        <NOTAM id="C2711/16">
+            <ItemQ>EGTT/QMRCL/IV/NBO /A /000/999/5050N00018W</ItemQ>
+            <ItemA>EGKA</ItemA>
+            <ItemB>1606130000</ItemB>
+            <ItemC>PERM</ItemC>
+            <ItemD/>
+            <ItemE>CHANGE TO RWY 07/25 DESIGNATORS TO RWY 06/24. AMEND ALL REFERENCES OF RWY 07 TO RWY 06 AND OF RWY 25 TO RWY 24. AIP AD 2.EGKA SECTIONS AD 2.9, 2.10, 2.12, 2.13, 2.20, 2.21 AND CHARTS AD 2-EGKA-2-1, 4-1,8-1, 8-2, 8-3, 8-4 AND 8-5 REFER.</ItemE>
+        </NOTAM>
+        <NOTAM id="K0137/16">
+            <ItemQ>EGTT/QOBCE/IV/M /AE /000/004/5049N00006W</ItemQ>
+            <ItemA>EGKA</ItemA>
+            <ItemB>1606060001</ItemB>
+            <ItemC>1609022359</ItemC>
+            <ItemD/>
+            <ItemE>CRANE IN LOW FLYING AREA 18 AND NIGHT ROTARY REGION 18 AND THE BRIGHTON AVOIDANCE AREA WI 1NM RADIUS OF PSN 504913N 0000616W (BRIGHTON,EAST SUSSEX) MAX HEIGHT 220FT AGL/342FT AMSL.16/05/070/LFTP</ItemE>
+        </NOTAM>
+        <NOTAM id="C2650/16">
+            <ItemQ>EGTT/QMRLL/IV/NBO /A /000/999/5050N00018W</ItemQ>
+            <ItemA>EGKA</ItemA>
+            <ItemB>1605311232</ItemB>
+            <ItemC>1607311900</ItemC>
+            <ItemD/>
+            <ItemE>RWY 07/25 WIDTH DECREASED FROM 50M TO 25M FROM THE NORTHERN EDGE.RWY 07/25 EDGES INDICATED BY WHITE CONES.</ItemE>
+        </NOTAM>
+    </NOTAMSET>
+</REQNOTAM>

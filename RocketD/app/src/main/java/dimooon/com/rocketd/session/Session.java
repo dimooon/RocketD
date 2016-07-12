@@ -1,11 +1,16 @@
 package dimooon.com.rocketd.session;
 
+import android.content.Context;
 import android.util.Log;
+
+import java.io.InputStream;
+import java.util.ArrayList;
 
 import dimooon.com.rocketd.session.data.Auth;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
+import dimooon.com.rocketd.session.data.Notam;
+import dimooon.com.rocketd.session.service.MockRocketNOTAMInformationRequest;
 import dimooon.com.rocketd.session.service.RocketAuthRequest;
-import dimooon.com.rocketd.session.service.RocketNOTAMInformationRequest;
 
 /**
  * Created by dimooon on 11.07.16.
@@ -13,9 +18,8 @@ import dimooon.com.rocketd.session.service.RocketNOTAMInformationRequest;
 public class Session {
 
     private static final String TAG = Session.class.getSimpleName();
-    private Auth auth;
 
-    public void signIn(){
+    public static void signIn(){
 
         final StringBuilder builder = new StringBuilder();
 
@@ -31,6 +35,7 @@ public class Session {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Auth auth = null;
                 auth = new Auth();
                 auth.parse(new RocketAuthRequest().request(builder.toString()));
                 Log.e(TAG,"toString: "+auth.toString());
@@ -38,7 +43,12 @@ public class Session {
         }).start();
     }
 
-    public void getNOTAMInformation(String icao){
+    public static ArrayList<Notam> getNOTAMInformation(String icao, final Context context){
+
+                NOTAMInformation notamInformation = null;
+                notamInformation = new NOTAMInformation();
+                notamInformation.parse(new MockRocketNOTAMInformationRequest(context).request(null));
+                return notamInformation.getNotamList();
 
     }
 }

@@ -15,23 +15,14 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
 
 import dimooon.com.rocketd.session.Session;
+import dimooon.com.rocketd.session.data.Notam;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView = null;
     private SearchView.OnQueryTextListener queryTextListener;
     private GoogleMap map;
-    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +44,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 map = googleMap;
-
-                LatLng sydney = new LatLng(-34, 151);
-                map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-                map.moveCamera(CameraUpdateFactory.newLatLng(sydney));
             }
         });
-        session = new Session();
-        session.signIn();
+        Session.signIn();
     }
 
     @Override
@@ -69,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
+        final MenuItem searchItem = menu.findItem(R.id.action_search);
 
         SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
 
@@ -89,8 +74,24 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public boolean onQueryTextSubmit(String query) {
-                session.getNOTAMInformation(query);
 
+                searchView.setQuery("", false);
+                searchView.setIconified(true);
+                searchItem.collapseActionView();
+
+                ArrayList<Notam> notams = Session.getNOTAMInformation(query,getApplicationContext());
+                Notam last = null;
+                for (Notam notm : notams){
+                    LatLng sydney = new LatLng(notm.getLat(), notm.getLng());
+                    MarkerOptions options = new MarkerOptions().position(sydney)
+                            .title(notm.getDescription())
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.warning));
+
+                    map.addMarker(options);
+                }
+                if(last!=null){
+                    map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(last.getLat(),last.getLng())));
+                }
                 return true;
             }
         };
