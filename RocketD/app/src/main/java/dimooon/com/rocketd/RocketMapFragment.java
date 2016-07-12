@@ -76,10 +76,8 @@ public class RocketMapFragment extends MapFragment {
 
     public void populate(){
 
-        Session.signIn();
-
-        this.notams.clear();
-        this.notams.addAll(Session.getNOTAMInformation(icao, getContext()));
+        notams.clear();
+        notams.addAll(Session.getNOTAMInformation(icao, getContext()));
 
         LatLng location = null;
 

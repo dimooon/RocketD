@@ -3,6 +3,8 @@ package dimooon.com.rocketd;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -12,15 +14,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.InputStream;
+
+import dimooon.com.rocketd.session.Session;
+import dimooon.com.rocketd.session.SessionRequestListener;
+import dimooon.com.rocketd.session.data.Auth;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String SEARCH_QUERY = "searchQuery";
-
+    public static final String SAVED_API_KEY = "SAVED_API_KEY";
     public static final int ICAO_LENGTH = 4;
-    private SearchView searchView = null;
-    private RocketMapFragment mapFragment;
 
+    private SearchView searchView = null;
+    private RocketMapFragment mapFragment = null;
     private String currentICAO = null;
+    private String apiKey = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,51 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         mapFragment = (RocketMapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
+
+        restoreTitle(savedInstanceState);
+        authenticate();
+    }
+
+    private void restoreTitle(Bundle savedInstanceState){
+        if(savedInstanceState!=null) {
+            if(!TextUtils.isEmpty(this.apiKey)){
+                updateToolbarTitle(getString(R.string.signed_in_message));
+            }
+        }
+    }
+
+    private void authenticate(){
+        if(TextUtils.isEmpty(apiKey)){
+
+            Session.signIn(new SessionRequestListener() {
+                @Override
+                public void onSuccess(InputStream result) {
+
+                    Auth auth;
+                    auth = new Auth();
+                    auth.parse(result);
+
+                    apiKey = auth.getAuthKey();
+
+                    if(TextUtils.isEmpty(apiKey)){
+                        return;
+                    }
+                    new Handler(getMainLooper()).post(new Runnable() {
+                        @Override
+                        public void run() {
+                            updateToolbarTitle(getString(R.string.signed_in_message));
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    private void updateToolbarTitle(String title){
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar!=null){
+            actionBar.setTitle(title);
+        }
     }
 
     @Override
@@ -38,12 +92,16 @@ public class MainActivity extends AppCompatActivity {
         if(currentICAO!=null){
             outState.putString(SEARCH_QUERY, currentICAO);
         }
+        if(!TextUtils.isEmpty(this.apiKey)){
+            outState.putString(SAVED_API_KEY,this.apiKey);
+        }
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         currentICAO = savedInstanceState.getString(SEARCH_QUERY);
+        this.apiKey = savedInstanceState.getString(SAVED_API_KEY);
     }
 
     @Override
@@ -76,6 +134,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
+                boolean enableSearch = TextUtils.isEmpty(apiKey);
+
+                if(enableSearch){
+                    Toast.makeText(getApplicationContext(),getString(R.string.not_authorized_error),Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+
                 if(query.length()!= ICAO_LENGTH){
                     Toast.makeText(getApplicationContext(),getString(R.string.query_error),Toast.LENGTH_SHORT).show();
                     return true;
@@ -97,16 +162,5 @@ public class MainActivity extends AppCompatActivity {
         };
         searchView.setOnQueryTextListener(queryTextListener);
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_search:
-                return false;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
