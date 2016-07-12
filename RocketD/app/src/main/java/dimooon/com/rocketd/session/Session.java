@@ -35,16 +35,14 @@ public class Session {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Auth auth = null;
+                Auth auth;
                 auth = new Auth();
                 auth.parse(new RocketAuthRequest().request(builder.toString()));
-                Log.e(TAG,"toString: "+auth.toString());
             }
         }).start();
     }
 
     public static ArrayList<Notam> getNOTAMInformation(String icao, final Context context){
-
                 NOTAMInformation notamInformation = null;
                 notamInformation = new NOTAMInformation();
                 notamInformation.parse(new MockRocketNOTAMInformationRequest(context).request(null));

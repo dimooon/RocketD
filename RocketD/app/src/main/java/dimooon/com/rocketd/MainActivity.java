@@ -6,30 +6,21 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.ArrayList;
-
-import dimooon.com.rocketd.session.Session;
-import dimooon.com.rocketd.session.data.Notam;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    public static final String SEARCH_QUERY = "searchQuery";
+
+    public static final int ICAO_LENGTH = 4;
     private SearchView searchView = null;
-    private SearchView.OnQueryTextListener queryTextListener;
-    private GoogleMap map;
+    private RocketMapFragment mapFragment;
+
+    private String currentICAO = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +29,21 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
+        mapFragment = (RocketMapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
+    }
 
-        mapFragment.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                map = googleMap;
-            }
-        });
-        Session.signIn();
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(currentICAO!=null){
+            outState.putString(SEARCH_QUERY, currentICAO);
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        currentICAO = savedInstanceState.getString(SEARCH_QUERY);
     }
 
     @Override
@@ -60,38 +57,41 @@ public class MainActivity extends AppCompatActivity {
 
         if (searchItem != null) {
             searchView = (SearchView) searchItem.getActionView();
+            if(!TextUtils.isEmpty(currentICAO)){
+                searchView.setQuery(currentICAO,false);
+                searchView.setIconified(false);
+            }
         }
         if (searchView != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(MainActivity.this.getComponentName()));
         }
 
-        queryTextListener = new SearchView.OnQueryTextListener() {
+        SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextChange(String newText) {
-                Log.i("onQueryTextChange", newText);
-
+                currentICAO = newText;
                 return true;
             }
+
             @Override
             public boolean onQueryTextSubmit(String query) {
+
+                if(query.length()!= ICAO_LENGTH){
+                    Toast.makeText(getApplicationContext(),getString(R.string.query_error),Toast.LENGTH_SHORT).show();
+                    return true;
+                }
 
                 searchView.setQuery("", false);
                 searchView.setIconified(true);
                 searchItem.collapseActionView();
 
-                ArrayList<Notam> notams = Session.getNOTAMInformation(query,getApplicationContext());
-                Notam last = null;
-                for (Notam notm : notams){
-                    LatLng sydney = new LatLng(notm.getLat(), notm.getLng());
-                    MarkerOptions options = new MarkerOptions().position(sydney)
-                            .title(notm.getDescription())
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.warning));
+                if(mapFragment!=null){
+                    mapFragment.setICAO(query);
+                    mapFragment.populate();
+                }
 
-                    map.addMarker(options);
-                }
-                if(last!=null){
-                    map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(last.getLat(),last.getLng())));
-                }
+                currentICAO = null;
+
                 return true;
             }
         };

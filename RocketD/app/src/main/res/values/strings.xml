@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RocketD</string>
+    <string name="query_error">Please type valid value (only 4-word)</string>
 </resources>

@@ -1,5 +1,6 @@
 package dimooon.com.rocketd;
 
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -8,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
+import org.xml.sax.InputSource;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -28,6 +30,15 @@ public class DataTest {
 
     @Test
     public void testAuth() throws Exception {
+
+        InputSource authResponse = new InputSource(RuntimeEnvironment.application.getResources().openRawResource(R.raw.auth_response));
+
+        Auth auth = new Auth();
+        auth.parse(authResponse.getByteStream());
+        System.out.println(""+(DataTest.class.getSimpleName()+"auth:"+auth));
+        assertNotNull(auth);
+        assertTrue(auth.getAuthKey()!=null);
+        assertFalse("".equals(auth.getAuthKey()));
 
     }
 

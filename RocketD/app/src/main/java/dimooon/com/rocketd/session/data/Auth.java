@@ -29,7 +29,6 @@ public class Auth extends RocketEntity{
         @Override
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
             this.tag = localName;
-            Log.e(TAG,""+localName);
         }
 
         @Override
@@ -37,7 +36,7 @@ public class Auth extends RocketEntity{
             String chars = new String(ch, start, length);
             chars = chars.trim();
 
-            if(TextUtils.isEmpty(chars)){
+            if(chars!=null&&!"".equals(chars)){
                 return;
             }
 
