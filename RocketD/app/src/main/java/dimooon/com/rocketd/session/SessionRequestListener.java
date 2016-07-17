@@ -1,10 +1,11 @@
 package dimooon.com.rocketd.session;
 
-import java.io.InputStream;
+import dimooon.com.rocketd.session.data.RocketEntity;
 
 /**
  * Created by dimooon on 12.07.16.
  */
-public interface SessionRequestListener {
-    void onSuccess(InputStream result);
+public interface SessionRequestListener<T extends RocketEntity>{
+    void onSuccess(T response);
+    void onSomethingWentWrong(String message);
 }

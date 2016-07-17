@@ -24,44 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e26660b-3992-4e74-9e3d-f2a430c1d22f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/accessibility_test_framework_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/ant_1_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/ant_launcher_1_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_5_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_analysis_5_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_commons_5_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_tree_5_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/asm_util_5_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bcprov_jdk16_1_46.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/guava_19_0_rc2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/icu4j_53_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/maven_ant_tasks_2_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_apache_http_legacy_android_23.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_base_9_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_basement_9_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_location_9_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_maps_9_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_tasks_9_2_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/protobuf_java_2_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/robolectric_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/robolectric_annotations_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/robolectric_resources_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/robolectric_utils_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/shadows_core_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sqlite4java_0_282.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/vtd_xml_2_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/xmlpull_1_1_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/xpp3_min_1_1_4c.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/xstream_1_4_8.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/ItemQParser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/RocketRequestTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/ItemQPareserTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/SessionTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/MockRocketNOTAMInformationRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
@@ -70,14 +38,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/DataTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/DataTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="RocketD.iws" />
@@ -91,14 +62,44 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/RocketD$DataTest_testNOTAM.coverage" NAME="DataTest.testNOTAM Coverage Results" MODIFIED="1468784824391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$rocketd_in_app.coverage" NAME="rocketd in app Coverage Results" MODIFIED="1468784705055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/RocketD$SessionTest_testSessionDestroy.coverage" NAME="SessionTest.testSessionDestroy Coverage Results" MODIFIED="1468676740571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$DataTest_testItemQParse.coverage" NAME="DataTest.testItemQParse Coverage Results" MODIFIED="1468751154719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$ItemQPareserTest.coverage" NAME="ItemQPareserTest Coverage Results" MODIFIED="1468784287168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$DataTest_testNOTAMInformation.coverage" NAME="DataTest.testNOTAMInformation Coverage Results" MODIFIED="1468678370886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$RequestTest_testGetNOTAMInformation.coverage" NAME="RequestTest.testGetNOTAMInformation Coverage Results" MODIFIED="1468655619579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$DataTest_testConvertUTMToLatLng.coverage" NAME="DataTest.testConvertUTMToLatLng Coverage Results" MODIFIED="1468746123301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$RequestTest_testRocketAuthRequestWithoutBody.coverage" NAME="RequestTest.testRocketAuthRequestWithoutBody Coverage Results" MODIFIED="1468336201448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/RocketD$MainActivityTest.coverage" NAME="MainActivityTest Coverage Results" MODIFIED="1468336932099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$SessionTest_testSessionIsLoggedInNullListener.coverage" NAME="SessionTest.testSessionIsLoggedInNullListener Coverage Results" MODIFIED="1468676462091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dimooon.com.rocketd.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RocketD$SessionTest_testSessionGetNOTAMInformation.coverage" NAME="SessionTest.testSessionGetNOTAMInformation Coverage Results" MODIFIED="1468677126088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dimooon.com.rocketd.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RocketD$RequestTest_testRocketAuthRequestWithBody.coverage" NAME="RequestTest.testRocketAuthRequestWithBody Coverage Results" MODIFIED="1468336235243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dimooon.com.rocketd.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RocketD$rocketd_in_app.coverage" NAME="rocketd in app Coverage Results" MODIFIED="1468334937955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/RocketD$RequestTest_testRocketAuthRequestWithoutBody.coverage" NAME="RequestTest.testRocketAuthRequestWithoutBody Coverage Results" MODIFIED="1468336201448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RocketD$ItemQPareserTest_testItemQParseProblem.coverage" NAME="ItemQPareserTest.testItemQParseProblem Coverage Results" MODIFIED="1468754201609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dimooon.com.rocketd.*</FILTER>
     </SUITE>
   </component>
@@ -120,21 +121,7 @@
     <favorites_list name="RocketD" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <element signature="e#1610#1647#0" expanded="true" />
-                <element signature="e#2463#2500#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1605,7 +1592,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4404781175051" />
+        <entry key="$PROJECT_DIR$" value="4405102538276" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1791,6 +1778,7 @@
                             <option value="$USER_HOME$/Android/Sdk/extras/google/m2repository/com/google/android/gms/play-services-maps/9.2.0/play-services-maps-9.2.0.aar" />
                             <option value="$USER_HOME$/Android/Sdk/extras/google/m2repository/com/google/android/gms/play-services-location/9.2.0/play-services-location-9.2.0.aar" />
                             <option value="$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.4/5fe28b9518e58819180a43a850fbc0dd24b7c050/commons-lang3-3.4.jar" />
                             <option value="$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/23.0.0/support-v4-23.0.0.aar" />
                             <option value="$USER_HOME$/Android/Sdk/extras/google/m2repository/com/google/android/gms/play-services-base/9.2.0/play-services-base-9.2.0.aar" />
                             <option value="$USER_HOME$/Android/Sdk/extras/google/m2repository/com/google/android/gms/play-services-basement/9.2.0/play-services-basement-9.2.0.aar" />
@@ -1936,8 +1924,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequst.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequest.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/ExampleUnitTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/MockRocketNOTAMInformationRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/raw/notam_response.xml" />
@@ -1946,21 +1932,30 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/main_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/SessionRequestListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/RocketRequestService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/DataTest.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/MainActivityTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/generated/VNDExtendedSoapSerializationEnvelope.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/RocketRequestTask.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/SessionTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/Util.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/ItemQParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/ItemQPareserTest.java" />
+        <option value="$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/DataTest.java" />
       </list>
     </option>
   </component>
@@ -1993,8 +1988,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -2100,32 +2096,157 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rocketd" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="session" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketD" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rocketd" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="session" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RocketD" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/SMART" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="ZX1G42BCZG" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="SearchEverywhereHistoryKey" value="Main&#9;FILE&#9;file:///home/dimooon/rocket/RocketD/app/src/main/java/dimooon/com/rocketd/MainActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="Nota&#9;FILE&#9;file:///home/dimooon/rocket/RocketD/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java&#10;Session&#9;FILE&#9;file:///home/dimooon/rocket/RocketD/app/src/main/java/dimooon/com/rocketd/session/Session.java&#10;Main&#9;FILE&#9;file:///home/dimooon/rocket/RocketD/app/src/main/java/dimooon/com/rocketd/MainActivity.java" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dimooon.com.rocketd.session.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/generated" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/res/raw" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainActivityTest">
+  <component name="RunManager" selected="JUnit.DataTest.testNOTAM">
+    <configuration default="false" name="DataTest.testItemQParse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dimooon.com.rocketd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
+      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.DataTest" />
+      <option name="METHOD_NAME" value="testItemQParse" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ItemQPareserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dimooon.com.rocketd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
+      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.ItemQPareserTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ItemQPareserTest.testItemQParseProblem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dimooon.com.rocketd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="app" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
+      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.ItemQPareserTest" />
+      <option name="METHOD_NAME" value="testItemQParseProblem" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="false" name="rocketd in app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="app" />
@@ -2148,7 +2269,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="RequestTest.testRocketAuthRequestWithoutBody" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DataTest.testNOTAM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="dimooon.com.rocketd.*" />
@@ -2159,61 +2280,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
-      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.RequestTest" />
-      <option name="METHOD_NAME" value="testRocketAuthRequestWithoutBody" />
+      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.DataTest" />
+      <option name="METHOD_NAME" value="testNOTAM" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="RequestTest.testRocketAuthRequestWithBody" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="dimooon.com.rocketd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="app" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
-      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.RequestTest" />
-      <option name="METHOD_NAME" value="testRocketAuthRequestWithBody" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="MainActivityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="dimooon.com.rocketd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="app" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dimooon.com.rocketd" />
-      <option name="MAIN_CLASS_NAME" value="dimooon.com.rocketd.MainActivityTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -2472,19 +2541,21 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.rocketd in app" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RequestTest.testRocketAuthRequestWithoutBody" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RequestTest.testRocketAuthRequestWithBody" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MainActivityTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DataTest.testItemQParse" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ItemQPareserTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ItemQPareserTest.testItemQParseProblem" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.rocketd in app" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DataTest.testNOTAM" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MainActivityTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RequestTest.testRocketAuthRequestWithBody" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RequestTest.testRocketAuthRequestWithoutBody" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.rocketd in app" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DataTest.testNOTAM" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.rocketd in app" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ItemQPareserTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ItemQPareserTest.testItemQParseProblem" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DataTest.testItemQParse" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
@@ -2514,69 +2585,78 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainActivityTest - 2016.07.12 at 18h 22m 22s.xml">
-      <configuration name="MainActivityTest" configurationId="JUnit" />
+    <history-entry file="DataTest_testNOTAM - 2016.07.17 at 22h 47m 14s.xml">
+      <configuration name="DataTest.testNOTAM" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainActivityTest - 2016.07.12 at 18h 23m 15s.xml">
-      <configuration name="MainActivityTest" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 21h 37m 29s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestTest_testRocketAuthRequestWithBody - 2016.07.12 at 18h 10m 43s.xml">
-      <configuration name="RequestTest.testRocketAuthRequestWithBody" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 21h 38m 50s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RequestTest_testRocketAuthRequestWithoutBody - 2016.07.12 at 18h 10m 09s.xml">
-      <configuration name="RequestTest.testRocketAuthRequestWithoutBody" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 21h 40m 04s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 17h 57m 57s.xml">
-      <configuration name="rocketd in app" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 22h 38m 32s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 17h 58m 03s.xml">
-      <configuration name="rocketd in app" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 22h 40m 14s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 17h 58m 26s.xml">
-      <configuration name="rocketd in app" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 22h 41m 45s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 17h 59m 21s.xml">
-      <configuration name="rocketd in app" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 22h 44m 15s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 18h 01m 10s.xml">
-      <configuration name="rocketd in app" configurationId="JUnit" />
+    <history-entry file="ItemQPareserTest - 2016.07.17 at 22h 44m 50s.xml">
+      <configuration name="ItemQPareserTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="rocketd_in_app - 2016.07.12 at 18h 07m 10s.xml">
+    <history-entry file="rocketd_in_app - 2016.07.17 at 22h 46m 24s.xml">
       <configuration name="rocketd in app" configurationId="JUnit" />
     </history-entry>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="870" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="100" y="100" width="1400" height="670" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34867504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34309623" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23152022" sideWeight="0.5025674" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39888424" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23152022" sideWeight="0.5025674" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35704324" sideWeight="0.49743262" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51046026" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40725243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2597,10 +2677,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="104" column="62" selection-start-line="104" selection-start-column="62" selection-end-line="104" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -2608,12 +2688,46 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="37" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding>
+            <element signature="e#2190#2216#0" expanded="true" />
+            <element signature="e#2219#2236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2621,10 +2735,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.2.0/jars/classes.jar!/com/google/android/gms/maps/model/LatLng.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3768116">
-          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding>
+            <element signature="e#2190#2216#0" expanded="true" />
+            <element signature="e#2219#2236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="72" selection-start-line="121" selection-start-column="72" selection-end-line="121" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding>
+            <element signature="e#2190#2216#0" expanded="true" />
+            <element signature="e#2219#2236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2639,7 +2844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2647,7 +2851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35280374">
           <caret line="1902" column="32" selection-start-line="1902" selection-start-column="32" selection-end-line="1902" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2670,19 +2873,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15384616">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.375">
           <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2691,19 +2885,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/dimooon/com/rocketd/ApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21505377">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2711,55 +2896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0779896">
           <caret line="3" column="41" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/notam_response.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25">
-          <caret line="5" column="68" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.074074075">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32407406">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/MockRocketNOTAMInformationRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39814815">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2773,24 +2909,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38271606">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.95238096">
+          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/SessionRequestListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.525">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketNOTAMInformationRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32407406">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.4375">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Auth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2625">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15584415">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/service/RocketAuthRequest.java">
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/java/util/regex/Matcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35472974">
-          <caret line="39" column="18" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.3324937">
+          <caret line="355" column="19" selection-start-line="355" selection-start-column="19" selection-end-line="355" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/SessionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7178842">
+          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -2798,7 +2986,82 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/Session.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/RocketRequestTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+          <folding>
+            <element signature="e#2190#2216#0" expanded="true" />
+            <element signature="e#2219#2236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/RocketEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7297297">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.2.0/jars/classes.jar!/com/google/android/gms/maps/model/LatLng.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.722488">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding>
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/NOTAMInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="e#2189#2190#0" expanded="true" />
+            <element signature="e#2223#2224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/data/Notam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3243243">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/session/ItemQParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/notam_response.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -2806,15 +3069,15 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/RocketMapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/RequestTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/ItemQPareserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2823,20 +3086,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/dimooon/com/rocketd/DataTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.6231156">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/dimooon/com/rocketd/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#1610#1647#0" expanded="true" />
-            <element signature="e#2463#2500#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -14,6 +14,7 @@ import org.xml.sax.InputSource;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
+import dimooon.com.rocketd.session.ItemQParser;
 import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.data.Auth;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
@@ -51,6 +52,11 @@ public class DataTest {
 
         NOTAMInformation notamInformation = new NOTAMInformation();
         notamInformation.parse(authResponse.getByteStream());
+
+        assertNotNull(notamInformation.getNotamSetName());
+        assertFalse(TextUtils.isEmpty(notamInformation.getNotamSetName()));
+        assertTrue("EGKA".equals(notamInformation.getNotamSetName()));
+
         assertNotNull(notamInformation);
         assertTrue(notamInformation.getNotamList()!=null);
         assertTrue(notamInformation.getNotamList().size() > 0);
@@ -75,8 +81,7 @@ public class DataTest {
                 "CHARTS AD 2-EGKA-2-1, 4-1,8-1, 8-2, 8-3, 8-4 AND 8-5 REFER.")
                 .equals(notam.getDescription()));
 
-        assertTrue(50.50 == notam.getLat());
-        assertTrue(-00.018 == notam.getLng());
+        assertTrue(50.83 == notam.getLat());
+        assertTrue(-0.3 == notam.getLng());
     }
-
 }

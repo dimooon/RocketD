@@ -7,6 +7,7 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,9 +16,8 @@ import java.util.regex.Pattern;
  */
 public class NOTAMInformation extends RocketEntity{
 
-    private static final String TAG = NOTAMInformation.class.getSimpleName();
     private static final String CONTRACT_NOTAM = "NOTAM";
-    public static final String CONTRACT_NOTAMSET = "CONTRACT_NOTAMSET";
+    public static final String CONTRACT_NOTAMSET = "NOTAMSET";
     private ArrayList<Notam> notams = new ArrayList<>();
 
     @Override
@@ -75,6 +75,10 @@ public class NOTAMInformation extends RocketEntity{
 
     public ArrayList<Notam> getNotamList(){
         return this.notams;
+    }
+
+    public String getNotamSetName(){
+        return this.valueMap.get(CONTRACT_NOTAMSET);
     }
 
     @Override

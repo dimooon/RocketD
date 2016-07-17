@@ -2,51 +2,87 @@ package dimooon.com.rocketd.session;
 
 import android.content.Context;
 
-import java.io.InputStream;
-import java.util.ArrayList;
-
+import dimooon.com.rocketd.session.data.Auth;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
-import dimooon.com.rocketd.session.data.Notam;
-import dimooon.com.rocketd.session.service.MockRocketNOTAMInformationRequest;
+import dimooon.com.rocketd.session.data.RocketEntity;
 import dimooon.com.rocketd.session.service.RocketAuthRequest;
+import dimooon.com.rocketd.session.service.RocketNOTAMInformationRequest;
 
 /**
  * Created by dimooon on 11.07.16.
  */
-public class Session {
+public class Session implements SessionRequestListener<RocketEntity>{
 
-    private static final String TAG = Session.class.getSimpleName();
+    public enum Status {NOT_INITIALIZED,LOGGED_IN,CONNECTION_ISSUE}
 
-    public static void signIn(final SessionRequestListener listener){
+    private static Session instance;
+    private static Status status = Status.NOT_INITIALIZED;
+    private static SessionRequestListener outboundListener;
 
-        final StringBuilder builder = new StringBuilder();
+    private static Auth cachedAuth = null;
+    private static NOTAMInformation cachedNotamInformation = null;
 
-        builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>").append("\n")
-                .append("<AUTH>").append("\n")
-                .append("<USR>dimooon.naumenko@gmail.com</USR>").append("\n")
-                .append("<PASSWD>ee13b152e65b89d924d775a98bca300a</PASSWD>").append("\n")
-                .append("<DEVICEID>e138231a68ad82f054e3d756c6634ba1</DEVICEID>").append("\n")
-                .append("<PCATEGORY>RocketRoute</PCATEGORY>").append("\n")
-                .append("<APPMD5>cfPKVvTfC9TU2Hvv2qyQ</APPMD5>").append("\n")
-                .append("</AUTH>");
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                InputStream result = new RocketAuthRequest().request(builder.toString());
-
-                if(listener!=null){
-                    listener.onSuccess(result);
-                }
-
-            }
-        }).start();
+    private Session() {
+        super();
     }
 
-    public static ArrayList<Notam> getNOTAMInformation(String icao, final Context context){
-                NOTAMInformation notamInformation = null;
-                notamInformation = new NOTAMInformation();
-                notamInformation.parse(new MockRocketNOTAMInformationRequest(context).request(null));
-                return notamInformation.getNotamList();
+    public static Session getInstance(){
+        return instance = instance == null ? new Session() : instance;
+    }
+
+    public Status getCurrentStatus() {
+        return status;
+    }
+
+    public boolean isSigned() {
+        return Session.Status.LOGGED_IN == getCurrentStatus();
+    }
+
+    public void signIn(final SessionRequestListener listener){
+        this.outboundListener = listener;
+
+        if(cachedAuth!=null){
+            outboundListener.onSuccess(cachedAuth);
+        }else{
+            new RocketRequestTask<Auth>(this).execute(new RocketAuthRequest());
+        }
+    }
+
+    public void getNOTAMInformation(String icao, final Context context,final SessionRequestListener listener){
+        this.outboundListener = listener;
+        if(cachedNotamInformation!=null&&cachedNotamInformation.getNotamSetName().equalsIgnoreCase(icao)){
+            listener.onSuccess(cachedNotamInformation);
+        }else{
+            new RocketRequestTask<NOTAMInformation>(this).execute(new RocketNOTAMInformationRequest(context,icao));
+        }
+
+    }
+
+    public boolean destroy() {
+        status = Status.NOT_INITIALIZED;
+        outboundListener = null;
+        cachedAuth = null;
+        cachedNotamInformation = null;
+        return true;
+    }
+
+    @Override
+    public void onSuccess(RocketEntity response) {
+        if(Auth.class.getSimpleName().equals(response.getClass().getSimpleName())){
+            cachedAuth = (Auth) response;
+        }else if(NOTAMInformation.class.getSimpleName().equals(response.getClass().getSimpleName())){
+            cachedNotamInformation = (NOTAMInformation) response;
+        }
+        if(outboundListener!=null){
+            status = Status.LOGGED_IN;
+            outboundListener.onSuccess(response);
+        }
+    }
+
+    @Override
+    public void onSomethingWentWrong(String message) {
+        if (outboundListener!=null){
+            outboundListener.onSomethingWentWrong(message);
+        }
     }
 }

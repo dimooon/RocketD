@@ -8,16 +8,16 @@ import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
-import java.io.InputStream;
+import java.io.IOException;
 
 import dimooon.com.rocketd.session.data.Auth;
-import dimooon.com.rocketd.session.service.MockRocketNOTAMInformationRequest;
+import dimooon.com.rocketd.session.data.NOTAMInformation;
 import dimooon.com.rocketd.session.service.RocketAuthRequest;
+import dimooon.com.rocketd.session.service.RocketNOTAMInformationRequest;
 import dimooon.com.rocketd.session.service.RocketRequest;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
 
 /**
@@ -28,54 +28,29 @@ import static junit.framework.Assert.assertTrue;
 public class RequestTest {
 
     @Test
-    public void testMockRocketNOTAMInformationRequest(){
+    public void testRocketAuthRequest(){
 
-        RocketRequest mockRocketNOTAMInformationRequest =
-                new MockRocketNOTAMInformationRequest(RuntimeEnvironment.application);
+        RocketRequest<Auth> rocketAuthRequest = new RocketAuthRequest();
 
-        InputStream stream =mockRocketNOTAMInformationRequest.request(null);
-        assertNotNull(stream);
-
+        Auth response = rocketAuthRequest.execute();
+        assertNotNull(response);
+        assertFalse(TextUtils.isEmpty(response.getAuthKey()));
     }
 
     @Test
-    public void testRocketAuthRequestWithoutBody(){
+    public void testGetNOTAMInformation() throws IOException {
 
-        RocketRequest  rocketAuthRequest = new RocketAuthRequest();
+        final String body = "EGKA";
 
-        InputStream stream = rocketAuthRequest.request(null);
+        RocketRequest<NOTAMInformation> request = new RocketNOTAMInformationRequest(RuntimeEnvironment.application,body);
+        NOTAMInformation information = request.execute();
 
-        assertNotNull(stream);
-        Auth auth = new Auth();
-        auth.parse(stream);
+        assertTrue(information!=null);
+        assertNotNull(information.getNotamList());
+        assertTrue(information.getNotamList().size()>0);
 
-        assertTrue(auth!=null);
-        assertTrue(TextUtils.isEmpty(auth.getAuthKey()));
+        assertNotNull(information.getNotamList().get(0).getLat());
+        assertNotNull(information.getNotamList().get(0).getLng());
+        assertNotNull(information.getNotamList().get(0).getDescription());
     }
-
-    @Test
-    public void testRocketAuthRequestWithBody(){
-
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>").append("\n")
-                .append("<AUTH>").append("\n")
-                .append("<USR>dimooon.naumenko@gmail.com</USR>").append("\n")
-                .append("<PASSWD>ee13b152e65b89d924d775a98bca300a</PASSWD>").append("\n")
-                .append("<DEVICEID>e138231a68ad82f054e3d756c6634ba1</DEVICEID>").append("\n")
-                .append("<PCATEGORY>RocketRoute</PCATEGORY>").append("\n")
-                .append("<APPMD5>cfPKVvTfC9TU2Hvv2qyQ</APPMD5>").append("\n")
-                .append("</AUTH>");
-
-        RocketRequest  rocketAuthRequest = new RocketAuthRequest();
-
-        InputStream stream = rocketAuthRequest.request(builder.toString());
-        assertNotNull(stream);
-        Auth auth = new Auth();
-        auth.parse(stream);
-
-        assertTrue(auth!=null);
-        assertFalse(TextUtils.isEmpty(auth.getAuthKey()));
-    }
-
 }

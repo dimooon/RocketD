@@ -1,7 +1,10 @@
 package dimooon.com.rocketd;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +18,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import dimooon.com.rocketd.session.Session;
+import dimooon.com.rocketd.session.SessionRequestListener;
+import dimooon.com.rocketd.session.data.NOTAMInformation;
 import dimooon.com.rocketd.session.data.Notam;
+import dimooon.com.rocketd.session.data.RocketEntity;
 
 /**
  * Created by dimooon on 12.07.16.
@@ -31,8 +38,8 @@ public class RocketMapFragment extends MapFragment {
     private String icao;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
         setRetainInstance(true);
     }
 
@@ -82,22 +89,46 @@ public class RocketMapFragment extends MapFragment {
         }
 
         notams.clear();
-        notams.addAll(Session.getNOTAMInformation(icao, getContext()));
+        map.clear();
 
-        LatLng location = null;
+        Session.getInstance().getNOTAMInformation(icao, getContext(), new SessionRequestListener<NOTAMInformation>() {
+            @Override
+            public void onSuccess(NOTAMInformation result) {
 
-        for (Notam notm : notams){
+                ArrayList<Notam> newNotams = result.getNotamList();
 
-            location = new LatLng(notm.getLat(), notm.getLng());
+                Log.e(RocketMapFragment.class.getSimpleName(),""+result);
 
-            MarkerOptions options = new MarkerOptions().position(location)
-                    .title(notm.getDescription())
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.warning));
+                if(newNotams == null){
+                    return;
+                }
 
-            map.addMarker(options);
-        }
-        if(location!=null){
-            map.moveCamera(CameraUpdateFactory.newLatLng(location));
-        }
+                notams.addAll(newNotams);
+
+                LatLng location = null;
+
+                for (Notam notm : notams){
+
+                    location = new LatLng(notm.getLat(), notm.getLng());
+
+                    Log.e(RocketMapFragment.class.getSimpleName(),"coords: "+notm.getLat()+" , "+notm.getLng());
+
+                    MarkerOptions options = new MarkerOptions().position(location)
+                            .title(notm.getDescription())
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.warning));
+
+                    map.addMarker(options);
+                }
+
+                if(location!=null){
+                    map.animateCamera(CameraUpdateFactory.newLatLng(location));
+                }
+            }
+
+            @Override
+            public void onSomethingWentWrong(String message) {
+
+            }
+        });
     }
 }

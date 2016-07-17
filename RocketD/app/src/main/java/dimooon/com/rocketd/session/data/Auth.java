@@ -1,13 +1,10 @@
 package dimooon.com.rocketd.session.data;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
-
-import java.util.HashMap;
 
 /**
  * Created by dimooon on 11.07.16.

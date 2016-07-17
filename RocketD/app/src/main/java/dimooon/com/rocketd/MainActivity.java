@@ -19,17 +19,16 @@ import java.io.InputStream;
 import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.SessionRequestListener;
 import dimooon.com.rocketd.session.data.Auth;
+import dimooon.com.rocketd.session.data.RocketEntity;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String SEARCH_QUERY = "searchQuery";
-    public static final String SAVED_API_KEY = "SAVED_API_KEY";
     public static final int ICAO_LENGTH = 4;
 
     private SearchView searchView = null;
     private RocketMapFragment mapFragment = null;
     private String currentICAO = null;
-    private String apiKey = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +38,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         mapFragment = (RocketMapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
-        restoreTitle(savedInstanceState);
-    }
 
-    private void restoreTitle(Bundle savedInstanceState){
-        if(savedInstanceState!=null) {
-            if(!TextUtils.isEmpty(this.apiKey)){
-                updateToolbarTitle(getString(R.string.signed_in_message));
-            }
+        if(savedInstanceState!=null){
+            updateToolbarTitle(Session.getInstance().isSigned());
         }
+
     }
 
     @Override
@@ -57,36 +52,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void authenticate(){
-        if(TextUtils.isEmpty(apiKey)){
+        if(!Session.getInstance().isSigned()){
 
-            Session.signIn(new SessionRequestListener() {
+            Session.getInstance().signIn(new SessionRequestListener<Auth>() {
+
                 @Override
-                public void onSuccess(InputStream result) {
+                public void onSuccess(Auth result) {
+                    updateToolbarTitle(true);
+                }
 
-                    Auth auth;
-                    auth = new Auth();
-                    auth.parse(result);
+                @Override
+                public void onSomethingWentWrong(String message) {
 
-                    apiKey = auth.getAuthKey();
-
-                    if(TextUtils.isEmpty(apiKey)){
-                        return;
-                    }
-                    new Handler(getMainLooper()).post(new Runnable() {
-                        @Override
-                        public void run() {
-                            updateToolbarTitle(getString(R.string.signed_in_message));
-                        }
-                    });
                 }
             });
         }
     }
 
-    private void updateToolbarTitle(String title){
+    private void updateToolbarTitle(boolean loggedIn){
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null){
-            actionBar.setTitle(title);
+            actionBar.setTitle(loggedIn ? R.string.signed_in_message : R.string.app_name);
         }
     }
 
@@ -96,16 +82,12 @@ public class MainActivity extends AppCompatActivity {
         if(currentICAO!=null){
             outState.putString(SEARCH_QUERY, currentICAO);
         }
-        if(!TextUtils.isEmpty(this.apiKey)){
-            outState.putString(SAVED_API_KEY,this.apiKey);
-        }
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         currentICAO = savedInstanceState.getString(SEARCH_QUERY);
-        this.apiKey = savedInstanceState.getString(SAVED_API_KEY);
     }
 
     @Override
@@ -138,9 +120,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                boolean enableSearch = TextUtils.isEmpty(apiKey);
-
-                if(enableSearch){
+                if(!Session.getInstance().isSigned()){
                     Toast.makeText(getApplicationContext(),getString(R.string.not_authorized_error),Toast.LENGTH_SHORT).show();
                     return true;
                 }
