@@ -1,13 +1,11 @@
 package dimooon.com.rocketd;
 
-import android.util.Log;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.annotation.Config;
 
-import dimooon.com.rocketd.session.ItemQParser;
+import dimooon.com.rocketd.session.data.ItemQParser;
 
 import static junit.framework.Assert.assertTrue;
 

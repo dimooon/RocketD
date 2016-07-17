@@ -1,4 +1,4 @@
-package dimooon.com.rocketd.session;
+package dimooon.com.rocketd.session.data;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -13,6 +13,13 @@ public class ItemQParser {
     private static final int LAT = 0;
     private static final int LNG = 1;
     private static final int TWO_COORDINATES = 2;
+    public static final int POSITIVE_SIGN = 1;
+    public static final int NEGATIVE_SIGN = -1;
+    public static final int NOTAM_LAT_DEGREE_LENGTH = 2;
+    public static final int NOTAM_LAT_SIZE = 4;
+    public static final int NOTAM_LNG_GEGREE_LENGTH = 3;
+    public static final int SEC_IN_MIN = 60;
+    public static final String RESULT_DIGIT_PATTERN = ".##";
 
     private double lat;
     private double lng;
@@ -28,21 +35,21 @@ public class ItemQParser {
         double[] result = new double[TWO_COORDINATES];
         int group = 0;
 
-        int latSign = 1;
-        int lngSign = 1;
+        int latSign = POSITIVE_SIGN;
+        int lngSign = POSITIVE_SIGN;
 
         if(geo.contains("W")){
-            lngSign = -1;
+            lngSign = NEGATIVE_SIGN;
         }
 
-        int majorLength = 2;
+        int majorLength = NOTAM_LAT_DEGREE_LENGTH;
 
         while (m.find()&&group<TWO_COORDINATES) {
 
             int size = m.group().length();
 
-            if(size > 4){
-                majorLength = 3;
+            if(size > NOTAM_LAT_SIZE){
+                majorLength = NOTAM_LNG_GEGREE_LENGTH;
             }
 
             String stringValue = m.group();
@@ -58,9 +65,9 @@ public class ItemQParser {
     }
     private double getDecimal(double degrees, double minutes){
 
-        double decimalValue = degrees + minutes/60;
+        double decimalValue = degrees + minutes/ SEC_IN_MIN;
 
-        String s = new DecimalFormat(".##").format(decimalValue);
+        String s = new DecimalFormat(RESULT_DIGIT_PATTERN).format(decimalValue);
 
         return Double.parseDouble(s);
     }

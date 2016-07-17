@@ -1,13 +1,6 @@
 package dimooon.com.rocketd.session.data;
 
-import android.text.TextUtils;
-
-import org.w3c.dom.Text;
 import org.xml.sax.ContentHandler;
-
-import java.io.File;
-
-import dimooon.com.rocketd.session.ItemQParser;
 
 /**
  * Created by dimooon on 12.07.16.

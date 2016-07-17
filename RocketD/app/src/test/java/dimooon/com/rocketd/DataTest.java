@@ -1,8 +1,6 @@
 package dimooon.com.rocketd;
 
-import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,11 +9,6 @@ import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.xml.sax.InputSource;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-
-import dimooon.com.rocketd.session.ItemQParser;
-import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.data.Auth;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
 import dimooon.com.rocketd.session.data.Notam;

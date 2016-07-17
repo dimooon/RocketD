@@ -1,7 +1,5 @@
 package dimooon.com.rocketd.session.service;
 
-import android.content.Context;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +16,6 @@ import dimooon.com.rocketd.session.data.RocketEntity;
  */
 public class RocketNOTAMInformationRequest extends RocketRequest {
 
-    private static final String TAG = RocketNOTAMInformationRequest.class.getSimpleName();
     private String body;
 
     public RocketNOTAMInformationRequest(String icao) {

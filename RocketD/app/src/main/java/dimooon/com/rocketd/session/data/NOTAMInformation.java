@@ -7,7 +7,6 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

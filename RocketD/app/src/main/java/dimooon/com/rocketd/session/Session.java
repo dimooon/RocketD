@@ -20,6 +20,7 @@ public class Session implements SessionRequestListener<RocketEntity>{
 
     private static Session instance;
     private static Status status = Status.NOT_INITIALIZED;
+
     private static SessionRequestListener outboundListener;
 
     private static Auth cachedAuth = null;

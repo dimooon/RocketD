@@ -1,8 +1,6 @@
 package dimooon.com.rocketd;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,13 +17,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.SessionRequestListener;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
 import dimooon.com.rocketd.session.data.Notam;
-import dimooon.com.rocketd.session.data.RocketEntity;
 
 /**
  * Created by dimooon on 12.07.16.
