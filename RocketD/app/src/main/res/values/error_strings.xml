@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_message_no_internet">No internet connection</string>
+    <string name="error_message_notam_is_null">Application failed to parse ICAO information</string>
+    <string name="error_message_notam_not_assigned">Sorry, but there is not NOTAM information</string>
+
+</resources>

@@ -1,7 +1,10 @@
 package dimooon.com.rocketd.session;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
+import dimooon.com.rocketd.R;
 import dimooon.com.rocketd.session.data.Auth;
 import dimooon.com.rocketd.session.data.NOTAMInformation;
 import dimooon.com.rocketd.session.data.RocketEntity;
@@ -34,12 +37,17 @@ public class Session implements SessionRequestListener<RocketEntity>{
         return status;
     }
 
-    public boolean isSigned() {
-        return Session.Status.LOGGED_IN == getCurrentStatus();
+    public boolean isSigned(Context context) {
+        return isNetworkAvailable(context)&&
+                (Session.Status.LOGGED_IN == getCurrentStatus());
     }
 
-    public void signIn(final SessionRequestListener listener){
-        this.outboundListener = listener;
+    public void signIn(Context context, final SessionRequestListener listener){
+        outboundListener = listener;
+
+        if(isAppearedInternetIssue(context, outboundListener)){
+            return;
+        }
 
         if(cachedAuth!=null){
             outboundListener.onSuccess(cachedAuth);
@@ -49,11 +57,16 @@ public class Session implements SessionRequestListener<RocketEntity>{
     }
 
     public void getNOTAMInformation(String icao, final Context context,final SessionRequestListener listener){
-        this.outboundListener = listener;
+        outboundListener = listener;
+
+        if(isAppearedInternetIssue(context, outboundListener)){
+            return;
+        }
+
         if(cachedNotamInformation!=null&&cachedNotamInformation.getNotamSetName().equalsIgnoreCase(icao)){
             listener.onSuccess(cachedNotamInformation);
         }else{
-            new RocketRequestTask<NOTAMInformation>(this).execute(new RocketNOTAMInformationRequest(context,icao));
+            new RocketRequestTask<NOTAMInformation>(this).execute(new RocketNOTAMInformationRequest(icao));
         }
 
     }
@@ -68,21 +81,50 @@ public class Session implements SessionRequestListener<RocketEntity>{
 
     @Override
     public void onSuccess(RocketEntity response) {
+
         if(Auth.class.getSimpleName().equals(response.getClass().getSimpleName())){
+            status = Status.LOGGED_IN;
             cachedAuth = (Auth) response;
         }else if(NOTAMInformation.class.getSimpleName().equals(response.getClass().getSimpleName())){
             cachedNotamInformation = (NOTAMInformation) response;
+
+            if(cachedNotamInformation==null){
+                onSomethingWentWrong(R.string.error_message_notam_is_null);
+                return;
+            }else if(cachedNotamInformation.getNotamList() == null){
+                onSomethingWentWrong(R.string.error_message_notam_not_assigned);
+                return;
+            }else if(cachedNotamInformation.getNotamList().size() == 0){
+                onSomethingWentWrong(R.string.error_message_notam_not_assigned);
+                return;
+            }
         }
+
         if(outboundListener!=null){
-            status = Status.LOGGED_IN;
             outboundListener.onSuccess(response);
         }
     }
 
     @Override
-    public void onSomethingWentWrong(String message) {
+    public void onSomethingWentWrong(int resourceId) {
         if (outboundListener!=null){
-            outboundListener.onSomethingWentWrong(message);
+            outboundListener.onSomethingWentWrong(resourceId);
         }
+    }
+
+    private boolean isAppearedInternetIssue(Context context, SessionRequestListener outboundListener){
+        if(!isNetworkAvailable(context)){
+            outboundListener.onSomethingWentWrong(R.string.error_message_no_internet);
+            destroy();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

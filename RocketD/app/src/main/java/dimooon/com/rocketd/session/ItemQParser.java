@@ -2,7 +2,6 @@ package dimooon.com.rocketd.session;
 
 import java.io.File;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,12 +14,10 @@ public class ItemQParser {
     private static final int LNG = 1;
     private static final int TWO_COORDINATES = 2;
 
-    private String qItem;
     private double lat;
     private double lng;
 
     public ItemQParser(String qItem) {
-        this.qItem = qItem;
 
         String[] segments = qItem.split(File.separator);
         String geo = segments[segments.length-1];

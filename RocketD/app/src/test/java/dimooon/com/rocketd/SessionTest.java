@@ -52,17 +52,17 @@ public class SessionTest {
 
         assertFalse(session.getCurrentStatus() == Session.Status.LOGGED_IN);
 
-        session.signIn(new SessionRequestListener<Auth>() {
+        session.signIn(RuntimeEnvironment.application,new SessionRequestListener<Auth>() {
 
             @Override
             public void onSuccess(Auth response) {
                 assertNotNull(response);
                 assertFalse(TextUtils.isEmpty(response.getAuthKey()));
-                assertTrue(session.isSigned());
+                assertTrue(session.isSigned(RuntimeEnvironment.application));
             }
 
             @Override
-            public void onSomethingWentWrong(String message) {
+            public void onSomethingWentWrong(int message) {
                 Assert.fail();
             }
         });
@@ -71,6 +71,18 @@ public class SessionTest {
 
     @Test
     public void testSessionGetNOTAMInformation(){
+
+        session.signIn(RuntimeEnvironment.application, new SessionRequestListener() {
+            @Override
+            public void onSuccess(RocketEntity response) {
+                assertTrue(session.isSigned(RuntimeEnvironment.application));
+            }
+
+            @Override
+            public void onSomethingWentWrong(int resourceId) {
+                Assert.fail();
+            }
+        });
 
         session.getNOTAMInformation("EGKA", RuntimeEnvironment.application,
                 new SessionRequestListener<NOTAMInformation>() {
@@ -83,12 +95,10 @@ public class SessionTest {
                         .isEmpty(String.valueOf(response.getNotamList().get(0).getLat())));
                 assertFalse(TextUtils.
                         isEmpty(String.valueOf(response.getNotamList().get(0).getLng())));
-
-                assertTrue(session.isSigned());
             }
 
             @Override
-            public void onSomethingWentWrong(String message) {
+            public void onSomethingWentWrong(int message) {
                 Assert.fail();
             }
         });
@@ -97,19 +107,19 @@ public class SessionTest {
 
     @Test
     public void testSessionDestroy(){
-        session.signIn(new SessionRequestListener() {
+        session.signIn(RuntimeEnvironment.application,new SessionRequestListener() {
             @Override
             public void onSuccess(RocketEntity response) {
-                assertTrue(session.isSigned());
+                assertTrue(session.isSigned(RuntimeEnvironment.application));
 
                 boolean result =  session.destroy();
                 assertTrue(result);
 
-                assertFalse(session.isSigned());
+                assertFalse(session.isSigned(RuntimeEnvironment.application));
             }
 
             @Override
-            public void onSomethingWentWrong(String message) {
+            public void onSomethingWentWrong(int message) {
 
             }
         });

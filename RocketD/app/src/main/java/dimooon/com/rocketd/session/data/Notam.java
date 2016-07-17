@@ -14,8 +14,8 @@ import dimooon.com.rocketd.session.ItemQParser;
  */
 public class Notam extends RocketEntity {
 
-    public static final String CONTRACT_GEO_DATA_ITEM_Q = "ItemQ";
-    public static final String CONTRACT_DESCRIPTION_ITEM_E = "ItemE";
+    private static final String CONTRACT_GEO_DATA_ITEM_Q = "ItemQ";
+    private static final String CONTRACT_DESCRIPTION_ITEM_E = "ItemE";
 
     @Override
     protected ContentHandler getResponsibleParser() {

@@ -3,7 +3,6 @@ package dimooon.com.rocketd;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -14,19 +13,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.io.InputStream;
-
 import dimooon.com.rocketd.session.Session;
 import dimooon.com.rocketd.session.SessionRequestListener;
 import dimooon.com.rocketd.session.data.Auth;
-import dimooon.com.rocketd.session.data.RocketEntity;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String SEARCH_QUERY = "searchQuery";
-    public static final int ICAO_LENGTH = 4;
+    private static final String SEARCH_QUERY = "searchQuery";
+    private static final int ICAO_LENGTH = 4;
 
     private SearchView searchView = null;
+    private MenuItem refreshItem = null;
     private RocketMapFragment mapFragment = null;
     private String currentICAO = null;
 
@@ -40,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mapFragment = (RocketMapFragment) getFragmentManager().findFragmentById(R.id.map_fragment);
 
         if(savedInstanceState!=null){
-            updateToolbarTitle(Session.getInstance().isSigned());
+            updateUI(Session.getInstance().isSigned(this));
         }
 
     }
@@ -52,27 +49,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void authenticate(){
-        if(!Session.getInstance().isSigned()){
+        if(!Session.getInstance().isSigned(this)){
 
-            Session.getInstance().signIn(new SessionRequestListener<Auth>() {
+            Session.getInstance().signIn(this,new SessionRequestListener<Auth>() {
 
                 @Override
                 public void onSuccess(Auth result) {
-                    updateToolbarTitle(true);
+                    updateUI(true);
                 }
 
                 @Override
-                public void onSomethingWentWrong(String message) {
-
+                public void onSomethingWentWrong(int resourceId) {
+                    Toast.makeText(MainActivity.this,resourceId,Toast.LENGTH_LONG).show();
+                    updateUI(false);
                 }
             });
+        }else{
+            updateUI(true);
         }
     }
 
-    private void updateToolbarTitle(boolean loggedIn){
+    private void updateUI(boolean loggedIn){
+        updateTitle(loggedIn);
+        updateSignInButton(loggedIn);
+    }
+
+    private void updateTitle(boolean loggedIn){
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null){
             actionBar.setTitle(loggedIn ? R.string.signed_in_message : R.string.app_name);
+        }
+    }
+
+    private void updateSignInButton(boolean enable){
+        if(refreshItem!=null){
+            refreshItem.setEnabled(!enable);
         }
     }
 
@@ -120,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
 
-                if(!Session.getInstance().isSigned()){
+                if(!Session.getInstance().isSigned(MainActivity.this)){
                     Toast.makeText(getApplicationContext(),getString(R.string.not_authorized_error),Toast.LENGTH_SHORT).show();
                     return true;
                 }
@@ -145,6 +156,16 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         searchView.setOnQueryTextListener(queryTextListener);
+
+        refreshItem = menu.findItem(R.id.action_login);
+        refreshItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                authenticate();
+                return true;
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
 }

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,7 +32,7 @@ import dimooon.com.rocketd.session.data.RocketEntity;
  */
 public class RocketMapFragment extends MapFragment {
 
-    public static final String ICAO_ID = "icaoId";
+    private static final String ICAO_ID = "icaoId";
 
     private ArrayList<Notam> notams = new ArrayList<>();
     private GoogleMap map;
@@ -126,8 +127,8 @@ public class RocketMapFragment extends MapFragment {
             }
 
             @Override
-            public void onSomethingWentWrong(String message) {
-
+            public void onSomethingWentWrong(int message) {
+                Toast.makeText(getActivity(),message,Toast.LENGTH_LONG).show();
             }
         });
     }

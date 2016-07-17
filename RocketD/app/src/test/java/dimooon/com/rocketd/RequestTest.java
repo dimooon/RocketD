@@ -42,7 +42,7 @@ public class RequestTest {
 
         final String body = "EGKA";
 
-        RocketRequest<NOTAMInformation> request = new RocketNOTAMInformationRequest(RuntimeEnvironment.application,body);
+        RocketRequest<NOTAMInformation> request = new RocketNOTAMInformationRequest(body);
         NOTAMInformation information = request.execute();
 
         assertTrue(information!=null);

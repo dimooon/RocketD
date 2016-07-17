@@ -15,8 +15,8 @@ import dimooon.com.rocketd.session.data.RocketEntity;
  */
 public abstract class RocketRequest<T extends RocketEntity> {
 
-    public static final String RESPONSE_TAG = "<response>";
-    public static final String RESPONSE_END_TAG = "</response>";
+    private static final String RESPONSE_TAG = "<response>";
+    private static final String RESPONSE_END_TAG = "</response>";
 
     public abstract T execute();
 

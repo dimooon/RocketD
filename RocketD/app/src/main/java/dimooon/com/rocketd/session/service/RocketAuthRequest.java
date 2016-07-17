@@ -24,7 +24,7 @@ public class RocketAuthRequest extends RocketRequest {
     private static final String BODY_KEY = "req";
     private static final String AUTH_URL = "https://mobiledev.rocketroute.com/remote/auth";
 
-    final StringBuilder builder = new StringBuilder();
+    private final StringBuilder builder = new StringBuilder();
 
     public RocketAuthRequest() {
 

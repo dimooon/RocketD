@@ -3,4 +3,6 @@
     <string name="query_error">Please type valid value (only 4-word)</string>
     <string name="not_authorized_error">You are not authorized, please check your Internet Connection</string>
     <string name="signed_in_message">RocketD : Signed In</string>
+    <string name="menu_title_refres">Refres</string>
+    <string name="menu_title_search">Search</string>
 </resources>

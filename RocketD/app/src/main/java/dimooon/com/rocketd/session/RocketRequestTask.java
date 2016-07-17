@@ -2,6 +2,7 @@ package dimooon.com.rocketd.session;
 
 import android.os.AsyncTask;
 
+import dimooon.com.rocketd.R;
 import dimooon.com.rocketd.session.data.RocketEntity;
 import dimooon.com.rocketd.session.service.RocketRequest;
 
@@ -31,7 +32,7 @@ class RocketRequestTask<T extends RocketEntity> extends AsyncTask<RocketRequest,
     protected void onPostExecute(T response) {
         super.onPostExecute(response);
         if (response == null) {
-            listener.onSomethingWentWrong("response is null");
+            listener.onSomethingWentWrong(R.string.error_message_notam_is_null);
         } else {
             listener.onSuccess(response);
         }

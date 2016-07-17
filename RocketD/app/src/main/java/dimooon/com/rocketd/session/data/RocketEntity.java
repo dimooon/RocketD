@@ -39,7 +39,7 @@ public abstract class RocketEntity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        };
+        }
     }
 
     public void put(String key,String value){

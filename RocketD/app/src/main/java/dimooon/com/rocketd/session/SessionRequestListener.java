@@ -7,5 +7,5 @@ import dimooon.com.rocketd.session.data.RocketEntity;
  */
 public interface SessionRequestListener<T extends RocketEntity>{
     void onSuccess(T response);
-    void onSomethingWentWrong(String message);
+    void onSomethingWentWrong(int resourceId);
 }

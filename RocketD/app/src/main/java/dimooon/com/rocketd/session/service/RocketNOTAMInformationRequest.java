@@ -19,10 +19,9 @@ import dimooon.com.rocketd.session.data.RocketEntity;
 public class RocketNOTAMInformationRequest extends RocketRequest {
 
     private static final String TAG = RocketNOTAMInformationRequest.class.getSimpleName();
-    private Context context;
     private String body;
 
-    public RocketNOTAMInformationRequest(Context context,String icao) {
+    public RocketNOTAMInformationRequest(String icao) {
 
         body =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
@@ -31,8 +30,6 @@ public class RocketNOTAMInformationRequest extends RocketRequest {
                 "<PASSWD>ee13b152e65b89d924d775a98bca300a</PASSWD>\n" +
                 "<ICAO>"+icao+"</ICAO>\n" +
                 "</REQWX>";
-
-        this.context = context;
     }
 
     public RocketEntity execute(){

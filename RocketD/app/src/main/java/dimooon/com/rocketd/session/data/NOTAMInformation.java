@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class NOTAMInformation extends RocketEntity{
 
     private static final String CONTRACT_NOTAM = "NOTAM";
-    public static final String CONTRACT_NOTAMSET = "NOTAMSET";
+    private static final String CONTRACT_NOTAMSET = "NOTAMSET";
     private ArrayList<Notam> notams = new ArrayList<>();
 
     @Override
