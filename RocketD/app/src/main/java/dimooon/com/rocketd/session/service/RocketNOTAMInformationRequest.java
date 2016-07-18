@@ -31,23 +31,24 @@ public class RocketNOTAMInformationRequest extends RocketRequest {
 
     public RocketEntity execute(){
         try {
-            return request2();
+            return request();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    private RocketEntity request2(){
+    private RocketEntity request(){
+
         NOTAMInformation information = null;
         String url="https://apidev.rocketroute.com/notam/v1/";
         String soapAction="urn:xmethods-notam#getNotam";
+
         HttpURLConnection connection = null;
-        OutputStreamWriter wr = null;
-        BufferedReader rd  = null;
-        StringBuilder sb = null;
-        String line = null;
         URL serverAddress = null;
+        InputStream stream = null;
+        OutputStreamWriter writer = null;
+
         String data =
         "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "<soapenv:Header/>\n" +
@@ -58,14 +59,10 @@ public class RocketNOTAMInformationRequest extends RocketRequest {
                 "</soapenv:Body>\n" +
                 "</soapenv:Envelope>";
 
-        InputStream stream = null;
-
         try {
             serverAddress = new URL(url);
 
             connection = null;
-
-            //Set up the initial connection
             connection = (HttpURLConnection)serverAddress.openConnection();
 
             connection.setRequestMethod("POST");
@@ -74,7 +71,7 @@ public class RocketNOTAMInformationRequest extends RocketRequest {
             connection.setRequestProperty( "Content-Length", Integer.toString( data.length() ) );
             connection.setRequestProperty("SOAPAction", soapAction);
 
-            OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
+            writer = new OutputStreamWriter(connection.getOutputStream());
 
             writer.write(data);
             writer.flush();
@@ -91,12 +88,14 @@ public class RocketNOTAMInformationRequest extends RocketRequest {
         }
         finally
         {
-            //close the connection, set all objects to null
             connection.disconnect();
-            rd = null;
-            sb = null;
-            wr = null;
-            connection = null;
+            try {
+                writer.close();
+            } catch (IOException e) {}
+            try {
+                stream.close();
+            } catch (IOException e) {}
+
         }
         return information;
     }

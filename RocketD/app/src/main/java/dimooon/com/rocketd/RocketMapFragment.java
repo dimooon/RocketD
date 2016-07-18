@@ -108,8 +108,6 @@ public class RocketMapFragment extends MapFragment {
 
                     location = new LatLng(notm.getLat(), notm.getLng());
 
-                    Log.e(RocketMapFragment.class.getSimpleName(),"coords: "+notm.getLat()+" , "+notm.getLng());
-
                     MarkerOptions options = new MarkerOptions().position(location)
                             .title(notm.getDescription())
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.warning));

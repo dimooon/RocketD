@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -165,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        updateSignInButton(Session.getInstance().isSigned(getApplicationContext()));
 
         return super.onCreateOptionsMenu(menu);
     }

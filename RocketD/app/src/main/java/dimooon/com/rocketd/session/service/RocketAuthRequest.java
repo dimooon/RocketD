@@ -41,11 +41,12 @@ public class RocketAuthRequest extends RocketRequest {
 
     public RocketEntity execute(){
 
-        InputStream stream = null;
-        HttpPost httppost ;
+        InputStream stream;
+        HttpPost httppost;
         List<NameValuePair> dataToPost = new ArrayList<NameValuePair>();
         HttpClient httpclient;
         Auth auth = null;
+
         try {
             httppost = new HttpPost(AUTH_URL);
 
@@ -65,5 +66,4 @@ public class RocketAuthRequest extends RocketRequest {
         }
         return auth;
     }
-
 }
